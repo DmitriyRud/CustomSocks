@@ -1,6 +1,10 @@
 {
   "development": {
-    "use_env_variable": "DB_CONNECT"
+    "username": "userName",
+    "password": "pass",
+    "database": "dbName",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
   },
   "test": {
     "username": "root",
