@@ -24,7 +24,7 @@ header {
 .color,
 .image,
 .pattern {
-  margin: 10px 0;
+  margin: 20px 0;
 }
 
 .preview {
@@ -47,6 +47,13 @@ header {
   padding: 20px;
   display: flex;
   justify-content: center;
+}
+
+#color-selector {
+  width: 20em;
+  padding: 5px;
+  color: #000;
+  background-color: transparent;
 }
 
 #favorites {
@@ -79,14 +86,36 @@ header {
   background-color: #FCA099;
 }
 
-.image {
+.image,
+.pattern {
+  margin-top: 20px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
-.img-card {
-  width: 100px;
-  height: 100px;
+.img-card,
+.pattern-card {
+  width: 102px;
+  height: 102px;
   border: 1px solid black;
+  position: relative;
+  overflow: hidden;
 }
 
+.img-card img {
+  position: absolute;
+  width: 780px;
+  height: 780px;
+  top: -475px;
+  left: -520px;
+}
+
+.pattern-card img {
+  position: absolute;
+  width: 550px;
+  height: 550px;
+  top: -50px;
+  left: -295px;
+  background-color: black;
+}
