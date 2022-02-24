@@ -21,4 +21,11 @@ router.delete('/delete/:id', deletemiddleware, async (req, res) => {
   }
 });
 
+router.get('/design/:id', async (req, res) => {
+  // отрисовать методом из конструктора + добавить кнопку поделиться
+  const { dataValues } = await Favorite.findOne({ where: { id: req.params.id } });
+  // в клиентском js заглушить кнопку и сделать всплывающий инпут с ссылкой
+  res.render('socksDesign', { design: dataValues });
+});
+
 module.exports = router;
