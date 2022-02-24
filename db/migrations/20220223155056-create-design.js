@@ -10,19 +10,15 @@ module.exports = {
       },
       color_id: {
         type: Sequelize.INTEGER,
-        references: {model: 'Colors', key: 'id'}
+        references: {model: 'Colors', onDelete: 'CASCADE'}
       },
       image_id: {
         type: Sequelize.INTEGER,
-        references: {model: 'Images', key: 'id'}
+        references: {model: 'Images', onDelete: 'CASCADE'}
       },
       pattern_id: {
         type: Sequelize.INTEGER,
-        references: {model: 'Patterns', key: 'id'}
-      },
-      favorite_id: {
-        type: Sequelize.INTEGER,
-        references: {model: 'Favorites', key: 'id'}
+        references: {model: 'Patterns', onDelete: 'CASCADE'}
       },
       price: {
         type: Sequelize.FLOAT
