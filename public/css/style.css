@@ -1,0 +1,92 @@
+body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  width: 100%;
+}
+
+.constructor-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputs {
+  margin-top: 20px;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.color,
+.image,
+.pattern {
+  margin: 10px 0;
+}
+
+.preview {
+  border: 1px solid black;
+  margin: 20px 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.screen{
+  width: 302px;
+  height: 302px;
+  border: 1px solid black;
+}
+
+.controls {
+  border: 1px solid black;
+  margin: 20px 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+#favorites {
+  margin-right: 3em;
+  padding: 5px 10px;
+}
+
+#cart {
+  padding: 5px 10px;
+}
+
+.screen {
+  position: relative;
+}
+
+.layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.layer img {
+  width: 300px;
+  height: 300px;
+}
+
+#color-layer {
+  width: 300px;
+  height: 300px;
+  background-color: #FCA099;
+}
+
+.image {
+  display: flex;
+  justify-content: space-between;
+}
+
+.img-card {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+}
+
