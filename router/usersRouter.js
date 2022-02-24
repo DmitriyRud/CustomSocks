@@ -1,25 +1,25 @@
-const express = require("express");
-const sha256 = require("sha256");
+const express = require('express');
+const sha256 = require('sha256');
 
 const router = express.Router();
 
-const { User } = require("../db/models");
+const { User } = require('../db/models');
 
-router.get("/signup", (req, res) => {
-  res.render("signup");
+router.get('/signup', (req, res) => {
+  res.render('signup');
 });
 
-router.post("/signup", async (req, res) => {
+router.post('/signup', async (req, res) => {
   try {
     const { name, email, phone } = req.body;
     const userOne = await User.findOne({ where: { email } });
     function formatPhoneNumber(tel) {
-      let cleaned = ("" + tel).replace(/\D/g, "");
-      let match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+      const cleaned = (`${tel}`).replace(/\D/g, '');
+      const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
       if (match) {
-        return "(" + match[1] + ") " + match[2] + "-" + match[3];
+        return `(${match[1]}) ${match[2]}-${match[3]}`;
       }
-      res.send("Пожалуйста, введите номер в указанном формате. Спасибо!");
+      res.send('Пожалуйста, введите номер в указанном формате. Спасибо!');
     }
     const redTel = formatPhoneNumber(phone);
     if (userOne) {
@@ -41,15 +41,15 @@ router.post("/signup", async (req, res) => {
       res.sendStatus(200);
     }
   } catch (error) {
-    console.log("Error user signup");
+    console.log('Error user signup');
   }
 });
 
-router.get("/signin", (req, res) => {
-  res.render("signin");
+router.get('/signin', (req, res) => {
+  res.render('signin');
 });
 
-router.post("/signin", async (req, res) => {
+router.post('/signin', async (req, res) => {
   const { email } = req.body;
   const password = sha256(req.body.password);
   const user = await User.findOne({ where: { email } });
@@ -57,24 +57,24 @@ router.post("/signin", async (req, res) => {
     if (user.password === password) {
       req.session.userId = user.id;
       req.session.userEmail = user.email;
-      res.redirect("/users/profile");
+      res.redirect('/users/profile');
     } else {
-      res.send("wrong password");
+      res.send('wrong password');
     }
   } else {
-    res.redirect("/users/signup");
+    res.redirect('/users/signup');
   }
 });
 
-router.get("/profile", async (req, res) => {
+router.get('/profile', async (req, res) => {
   const me = await User.findByPk(req.session.userId);
-  res.render("profile", { me });
+  res.render('profile', { me });
 });
 
-router.get("/logout", async (req, res) => {
+router.get('/logout', async (req, res) => {
   req.session.destroy();
-  res.clearCookie("login");
-  res.redirect("/");
+  res.clearCookie('login');
+  res.redirect('/');
 });
 
 module.exports = router;

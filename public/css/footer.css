@@ -14,7 +14,7 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  min-height: 83.6vh;
+  min-height: 100vh;
 }
 
 .footer {
