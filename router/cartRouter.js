@@ -11,6 +11,7 @@ router.get('/box', async (req, res) => {
     const { dataValues: color } = await Color.findOne({ where: { id: designObj.color_id } });
     const { dataValues: pattern } = await Pattern.findOne({ where: { id: designObj.pattern_id } });
     const { dataValues: image } = await Image.findOne({ where: { id: designObj.image_id } });
+    
     return { color, pattern, image };
   })
   const cart = await Cart.findAll({ where: { user_id: req.session.userId } });

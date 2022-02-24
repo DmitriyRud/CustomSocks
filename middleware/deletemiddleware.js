@@ -5,8 +5,7 @@ async function deletemiddleware(req, res, next) {
   const favorite = await Favorite.findByPk(req.params.id);
   if (userId === favorite.user_id) {
     next();
-    res.json({ message: 'Error' });
-  }
+  } else return res.json({ message: 'Error' });
 }
 
 module.exports = deletemiddleware;
