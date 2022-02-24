@@ -1,0 +1,18 @@
+<form>
+    <div id="Vraper">
+        <div class="wrapperWorker" data-id="{{userId}}">
+            {{#each getFavorite}}
+                <div class="container" data-id={{this.id}} >
+                    <form name="edit" action="get" >
+                        <div>{{this.user_id}}</div>
+                        <div>{{this.design_id}}</div>
+                        <li class="entry-link" id="delet"><a href="/users/profile" class="delete" id="{{this.id}}">Удалить</a></li>
+                    </form>
+                </div>
+                ===============================================================================
+            {{/each}}
+        </div>
+    </div>
+</form>
+</div>
+<script src="/js/deleteFavorite.js"></script>

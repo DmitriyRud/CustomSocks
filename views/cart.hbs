@@ -1,0 +1,9 @@
+<h2>Basket</h2>
+<div>CARTS</div>
+<div>
+    {{#each cart}}
+        <p>{{this.count}}</p>
+        <p>{{this.full_price}}</p>
+    {{/each}}
+    <h3>Итого: {{sum}}</h3>
+</div>
