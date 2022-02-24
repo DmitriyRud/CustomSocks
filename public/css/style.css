@@ -5,6 +5,10 @@ body {
   align-items: center;
 }
 
+p {
+  margin: 5px;
+}
+
 header {
   width: 100%;
 }
@@ -21,7 +25,10 @@ header {
   padding: 20px;
 }
 
-.color,
+.color {
+  margin: 0 0 10px;
+}
+
 .image,
 .pattern {
   margin: 20px 0;
@@ -29,7 +36,7 @@ header {
 
 .preview {
   border: 1px solid black;
-  margin: 20px 0;
+  margin: 20px 0 0;
   padding: 20px;
   display: flex;
   justify-content: center;
@@ -43,7 +50,7 @@ header {
 
 .controls {
   border: 1px solid black;
-  margin: 20px 0;
+  margin: 0;
   padding: 20px;
   display: flex;
   justify-content: center;
@@ -88,7 +95,7 @@ header {
 
 .image,
 .pattern {
-  margin-top: 20px;
+  margin-top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -118,4 +125,12 @@ header {
   height: 550px;
   top: -50px;
   left: -295px;
+}
+
+.messages {
+  display: flex;
+  justify-content: center;
+  color: green;
+  height: 40px;
+  padding: 5px;
 }

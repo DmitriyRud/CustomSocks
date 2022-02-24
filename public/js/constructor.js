@@ -51,6 +51,46 @@ imageDiv.addEventListener('click', (e) => {
     } else {
       patternLayer.setAttribute('src', e.target.getAttribute('src'));
     }
-
   }
+});
+
+const favoritesButton = document.querySelector('#favorites');
+const cartButton = document.querySelector('#cart');
+
+const message = document.querySelector('.messages p');
+
+
+favoritesButton.addEventListener('click', async (e) => {
+  e.preventDefault();
+  const resColor = colorSelector.value;
+  const resImage = imgLayer.getAttribute('src');
+  const resPattern = patternLayer.getAttribute('src');
+  //console.log({resColor, resImage, resPattern});
+  
+    const response = await fetch('/favorites', {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        color: resColor,
+        image: resImage,
+        pattern: resPattern,
+      })
+    });
+
+    if (response.ok) {
+      message.innerHTML = 'Дизайн добавлен в Избранное';
+      setTimeout(() => {
+        message.innerHTML = '';
+      }, 2000);
+    };
+});
+
+cartButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  message.innerHTML = 'Товар добавлен в корзину';
+  setTimeout(() => {
+    message.innerHTML = '';
+  }, 2000);
 });
