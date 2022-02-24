@@ -13,3 +13,44 @@ inputForm.addEventListener('click', (e) => {
     else colorSelector.style.color = '#FFFFFF';
   }
 });
+
+const imageDiv = document.querySelector('.images-patterns');
+
+imageDiv.addEventListener('mouseover', (e) => {
+  e.preventDefault();
+  if (e.target.nodeName === 'IMG') {
+    //e.target.parentNode.style.border = '2px solid red';
+    e.target.style.backgroundColor = colorSelector.value;
+  }
+});
+imageDiv.addEventListener('mouseout', (e) => {
+  e.preventDefault();
+  if (e.target.nodeName === 'IMG') {
+    //e.target.parentNode.style.border = '2px solid black';
+    if (e.target.parentNode.style.border !== '2px solid red') {
+      e.target.style.backgroundColor = 'unset';
+    }
+  }
+});
+
+const imgLayer = document.querySelector('#img-layer img');
+const patternLayer = document.querySelector('#pattern-layer img');
+
+imageDiv.addEventListener('click', (e) => {
+  e.preventDefault();
+  if (e.target.nodeName === 'IMG') {
+    const allCards = e.target.parentNode.parentNode.children;
+    for (let i = 0; i < allCards.length; i++) {
+      allCards[i].querySelector('img').style.backgroundColor = 'unset';
+      allCards[i].style.border = '2px solid black';
+    }
+    e.target.parentNode.style.border = '2px solid red';
+    e.target.style.backgroundColor = colorSelector.value;
+    if (e.target.parentNode.getAttribute('class') === 'img-card') {
+      imgLayer.setAttribute('src', e.target.getAttribute('src'));
+    } else {
+      patternLayer.setAttribute('src', e.target.getAttribute('src'));
+    }
+
+  }
+});

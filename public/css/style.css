@@ -98,9 +98,10 @@ header {
 .pattern-card {
   width: 102px;
   height: 102px;
-  border: 1px solid black;
+  border: 2px solid black;
   position: relative;
   overflow: hidden;
+  background-color:#ffffff;
 }
 
 .img-card img {
@@ -117,5 +118,4 @@ header {
   height: 550px;
   top: -50px;
   left: -295px;
-  background-color: black;
 }
