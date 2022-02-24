@@ -1,0 +1,33 @@
+body {
+  height: 100%;
+  font-family: Tahoma, sans-serif;
+  font-size: 16px;
+  color: #111;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.page {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 83.6vh;
+}
+
+.footer {
+  margin-top: auto;
+}
+
+.footer {
+  padding: 30px;
+  background-color: #2725b5;
+}
+
+/* .content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+} */
