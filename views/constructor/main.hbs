@@ -1,0 +1,57 @@
+<div class="constructor-container">
+  <div class="head">
+    <h1>Socks constructor</h1>
+  </div>
+  <div class="inputs">
+
+    <form id="input-form" action="/constructor/new" method="POST">
+      <p>Цвет носков:</p>
+      <div class="color">
+          <select name="colorpicker">
+          <option value="#FFFFFF">Белый</option>
+          <option value="#000000">Черный</option>
+          <option value="#0000FF">Синий</option>
+          <option value="#FCA099">Нежно-розовый</option>
+          <option value="#FFD700">Желтый</option>
+          <option value="#008000">Зеленый</option>
+
+        </select>
+      </div>
+      <p>Изображение:</p>
+      <div class="image">
+        <div class="img-card"></div>
+        <div class="img-card"></div>
+        <div class="img-card"></div>
+        <div class="img-card"></div>
+        <div class="img-card"></div>
+      </div>
+        <p>Узор:</p>
+      <div class="pattern">
+        
+        <select name="colorpicker">
+          <option value="#FFFFFF">Белый</option>
+          <option value="#000000">Черный</option>
+          <option value="#0000FF">Синий</option>
+          <option value="#FCA099">Нежно-розовый</option>
+          <option value="#FFD700">Желтый</option>
+          <option value="#008000">Зеленый</option>
+
+        </select></div>
+      <input type="submit" value="Выбрать">
+
+    </form>
+
+  </div>
+  <div class="preview">
+    <div class="screen">
+      <div id="color-layer" class="layer"></div>
+      <div id="img-layer" class="layer"><img src="/img/img_1.png" alt="Изображение для носка"></div>
+      <div id="pattern-layer" class="layer"><img src="/img/pattern_1.png" alt="Узор для носка"></div>
+      <div id="upper-layer" class="layer"><img src="/img/socks_upper_level.png" alt="Шаблон носка"></div>
+    </div>
+  </div>
+  <div class="controls">
+    <input id="favorites" type="button" value="Добавить в избранное">
+    <input id="cart" type="button" value="Добавить в корзину">
+  </div>
+</div>
