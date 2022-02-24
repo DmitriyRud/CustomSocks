@@ -1,0 +1,2 @@
+DB_CONNECT=postgres://<user>:<password>@localhost:5432/<database>
+PORT=

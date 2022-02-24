@@ -9,13 +9,15 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       design_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: { model: 'Designs', onDelete: 'CASCADE'},
       },
       count: {
         type: Sequelize.INTEGER
       },
       user_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: { model: 'Users', onDelete: 'CASCADE'}
       },
       full_price: {
         type: Sequelize.FLOAT
