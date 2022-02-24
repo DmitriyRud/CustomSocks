@@ -3,8 +3,6 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const dotenv = require('dotenv').config();
 
-const PORT = 3000;
-
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 
@@ -41,6 +39,7 @@ app.use((req, res, next) => {
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
-  console.log('Сервер Работает');
+  console.log(`Сервер Работает на порту ${PORT}`);
 });
