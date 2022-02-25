@@ -159,6 +159,7 @@ header {
   justify-content: space-between;
   align-content: center;
   height: 9em;
+  margin-left: 2.5em;
 }
 
 .logo {
@@ -173,13 +174,14 @@ header {
   width: 5em;
   height: 6em;
   margin: auto;
+  margin-top: 1em;
 }
 
 .title {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: #7d2adb;
+  color: #393185;
 }
 
 .reglogin {
@@ -188,13 +190,13 @@ header {
 
 .reglogin ul {
   display: flex;
-  color: #7d2adb;
+  color: #393185;
   font-weight: bold;
   margin-bottom: 0;
 }
 
 .reglogin ul a {
-  color:#7d2adb;
+  color:#393185;
 }
 
 .reglogin ul a:hover{
@@ -210,7 +212,7 @@ header {
 
 nav {
   width: 100%;
-  background-color: #7d2adb;
+  background-color: #393185;
   height: 30px;
 }
 .nav-item {
@@ -223,7 +225,7 @@ nav {
   justify-content:flex-start;
   color:#ffffff;
   text-transform: uppercase;
-  
+  margin-left: 2em;  
 }
 
 .nav-ul a {
@@ -244,10 +246,11 @@ nav {
 
 footer {
   width: 100%;
-  background-color:#7d2adb;
+  background-color:#393185;
   margin-top: auto;
   display: flex;
   justify-content: space-around;
+  justify-items: flex-start;
   align-content:center;
   align-items:center;
   font-size: small;
@@ -257,8 +260,8 @@ footer {
 
 .store {
   width: 30%;
-  margin: 0 5em;
-  padding: 20px;
+  margin: 0 8em 0 2em;
+  padding: 30px;
   text-transform:uppercase;
   color: #ffffff;
   font-weight: bold;
@@ -275,6 +278,11 @@ footer {
 
 .shopping-cart {
   text-align: center;
+}
+
+.title{
+
+  margin-right: auto;
 }
 
 .title h1 {
@@ -296,11 +304,11 @@ footer {
 }
 
 .welcome-text{
-  width: 50%;
-  height: auto;
+  width: 60%;
+  height: 90%;
   border: 1px solid rgb(180, 180, 180);
   background-color:hsla(0, 0%, 100%, 0.918);
-  font-size: large;
+  font-size: 1.5em;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

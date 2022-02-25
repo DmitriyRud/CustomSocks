@@ -28,7 +28,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
     cookie: { secure: false },
-    name: 'login',
+    userName: 'login',
     store: new FileStore(),
   }),
 );
@@ -37,6 +37,7 @@ app.use(
 app.use((req, res, next) => {
   res.locals.userId = req.session?.userId;
   res.locals.userName = req.session?.userName;
+  //console.log(res.locals.userName);
   next();
 });
 
@@ -46,7 +47,7 @@ app.use('/socks', socksRouter);
 app.use('/product', cartRouter);
 app.use('/chat', chatRouter);
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Сервер Работает на порту ${PORT}`);
 });
