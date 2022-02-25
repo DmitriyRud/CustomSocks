@@ -26,7 +26,7 @@ profileCont.addEventListener('click', async (e) => {
           body: JSON.stringify({ name }),
         });
         if (response.ok) {
-          window.location = '/users/profile';
+          window.location = `/users/profile/${response.id}`;
         }
       }
     }
@@ -59,7 +59,7 @@ profileCont.addEventListener('click', async (e) => {
           body: JSON.stringify({ email }),
         });
         if (response.ok) {
-          window.location = '/users/profile';
+          window.location = `/users/profile/${response.id}`;
         }
       }
     }
@@ -90,7 +90,7 @@ profileCont.addEventListener('click', async (e) => {
           body: JSON.stringify({ phone }),
         });
         if (response.ok) {
-          window.location = '/users/profile';
+          window.location = `/users/profile/${response.id}`;
         }
       }
     }
@@ -127,7 +127,7 @@ profileCont.addEventListener('click', async (e) => {
           body: JSON.stringify({ password }),
         });
         if (response.ok) {
-          window.location = '/users/profile';
+          window.location = `/users/profile/${response.id}`;
         }
       }
     }
