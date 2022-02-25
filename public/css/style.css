@@ -24,10 +24,22 @@ header {
   width: 100%;
 }
 
+.head {
+  padding-top: 1em;
+  text-align: center;
+}
+
 .constructor-container {
-  width: 80%;
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
+.constructor-window {
+  width: 95%;
+  margin: auto;
+  margin-bottom: 1em;
 }
 
 .inputs {
