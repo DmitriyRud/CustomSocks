@@ -77,4 +77,27 @@ router.get('/logout', async (req, res) => {
   res.redirect('/');
 });
 
+router.post('/profile', async (req, res) => {
+  const { name, password: pass, email, phone } = req.body;
+  const id = req.session.userId;
+  console.log(name, id);
+  if (name) {
+    const response = await User.update({ name }, { where: { id } });
+    return res.json(response);
+  }
+  if (email) {
+    const response = await User.update({ email }, { where: { id } });
+    return res.json(response);
+  }
+  if (pass) {
+    const password = sha256(pass);
+    const response = await User.update({ password }, { where: { id } });
+    return res.json(response);
+  }
+  if (phone) {
+    const response = await User.update({ phone }, { where: { id } });
+    return res.json(response);
+  }
+});
+
 module.exports = router;
