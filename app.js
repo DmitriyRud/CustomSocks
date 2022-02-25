@@ -36,7 +36,7 @@ app.use(
 // миддлвара для защиты ручек. Значение берется из сессии
 app.use((req, res, next) => {
   res.locals.userId = req.session?.userId;
-  res.locals.username = req.session?.username;
+  res.locals.userName = req.session?.userName;
   next();
 });
 

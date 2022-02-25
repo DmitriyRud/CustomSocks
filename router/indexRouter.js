@@ -11,7 +11,7 @@ const {
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  console.log(req)
+  //console.log(req)
   res.render('index');
 });
 
