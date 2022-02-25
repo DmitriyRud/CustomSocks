@@ -1,25 +1,29 @@
-<h3>Здравствуйте {{me.name}}</h3>
-<div id="pcont" class="profile-container">
-  <div>
-    <span>Name: </span><span>{{me.name}}</span>
-    <br>
-    <button id="btnNameChange">Сменить имя</button>
-  </div>
-  <div>
-    <span>e-mail: </span><span>{{me.email}}</span>
-    <br>
-    <button id="btnEmailChenge">Сменить e-mail</button>
-  </div>
-  <div>
-    <span>Phone: </span><span>{{me.phone}}</span>
-    <br>
-    <button id="btnPhoneChange">Сменить номер телефон</button>
-  </div>
-  <div>
-    <span>password: </span>
-    <br>
-    {{!-- <button id="btnPassView">Показать пароль</button> --}}
-    <button id="btnPassChenge">Сменить пароль</button>
+<div class="favorite-container">
+  <div class="register-window">
+    <h3>Здравствуйте {{me.name}}</h3>
+    
+      <div class="login-line">
+        <span>Имя: </span><span>{{me.name}}</span>
+        <br>
+        <button id="btnNameChange">Сменить имя</button>
+      </div>
+      <div class="login-line">
+        <span>e-mail: </span><span>{{me.email}}</span>
+        <br>
+        <button id="btnEmailChenge">Сменить e-mail</button>
+      </div>
+      <div class="login-line">
+        <span>Номер телефона: </span><span>{{me.phone}}</span>
+        <br>
+        <button id="btnPhoneChange">Сменить номер телефона</button>
+      </div>
+      <div class="login-line">
+        <span>Пароль: </span>
+        <br>
+        {{!-- <button id="btnPassView">Показать пароль</button> --}}
+        <button id="btnPassChenge">Сменить пароль</button>
+      </div>
+    
   </div>
 </div>
 <script src="/js/profile.js"></script>

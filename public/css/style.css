@@ -1,10 +1,9 @@
 body {
-  width: 100%;
-  height: 100vh;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+
 }
 
 .body-container {
@@ -269,6 +268,7 @@ footer {
   font-size: small;
   line-height: 1em;
   color: #ffffff;
+  flex-shrink: 0;
 }
 
 .store {
@@ -371,7 +371,6 @@ footer {
 
 .favorite-window {
   width: 95%;
-  height: 95%;
   border: 1px solid grey;
   margin: auto;
   display: flex;
@@ -381,19 +380,25 @@ footer {
 
 #favorite-form {
   width: 100%;
-  height: 100%;
+ 
+
 }
 
 .Vraper {
   width: 100%;
-  height: 100%;
+
 }
 
 .wrapperWorker {
   width: 100%;
-  height: 100%;
+  height: 50%;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  padding: 10%;
+  padding: 1em;
+ 
+}
+
+.login-line {
+  margin-bottom: 2em;
 }

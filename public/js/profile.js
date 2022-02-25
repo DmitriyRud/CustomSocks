@@ -1,4 +1,4 @@
-const profileCont = document.querySelector('#pcont');
+const profileCont = document.querySelector('.register-window');
 
 profileCont.addEventListener('click', async (e) => {
   if (e.target.id === 'btnNameChange') {
