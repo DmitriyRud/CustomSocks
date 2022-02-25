@@ -1,4 +1,3 @@
-'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Designs', {
@@ -6,34 +5,34 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       color_id: {
         type: Sequelize.INTEGER,
-        references: {model: 'Colors', onDelete: 'CASCADE'}
+        references: { model: 'Colors', onDelete: 'CASCADE' },
       },
       image_id: {
         type: Sequelize.INTEGER,
-        references: {model: 'Images', onDelete: 'CASCADE'}
+        references: { model: 'Images', onDelete: 'CASCADE' },
       },
       pattern_id: {
         type: Sequelize.INTEGER,
-        references: {model: 'Patterns', onDelete: 'CASCADE'}
+        references: { model: 'Patterns', onDelete: 'CASCADE' },
       },
       price: {
-        type: Sequelize.FLOAT
+        type: Sequelize.FLOAT,
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+      },
     });
   },
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('Designs');
-  }
+  },
 };
