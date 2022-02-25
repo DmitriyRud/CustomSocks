@@ -1,31 +1,33 @@
-<form>
-    <div id="Vraper">
+<div class="favorite-container">
+  <div class="favorite-window">
+    <form id="favorite-form">
+      <div id="Vraper">
         <div class="wrapperWorker" data-id="{{userId}}">
           
           {{#each result}}
-              <div name="frame">
-                <div>
-                  <div>Funny Socks #{{design_id}}</div>
-                  <div class="screen">
-                    <div id="color-layer" class="layer" style="background-color:{{color}}"></div>
-                    <div id="img-layer" class="layer"><img src="{{image}}" alt="Изображение для носка"></div>
-                    <div id="pattern-layer" class="layer"><img src="{{pattern}}" alt="Узор для носка"></div>
-                    <div id="upper-layer" class="layer"><img src="/img/socks_upper_level.png" alt="Шаблон носка"></div>
-                  </div>
-                  <button class="entry-link delete" id="{{design_id}}">Delete</button>
-              </div>
-                </div>
+
+          <div name="frame">
+            <div class="screen">
+              <div id="color-layer" class="layer" style="background-color:{{color}}"></div>
+              <div id="img-layer" class="layer"><img src="{{image}}" alt="Изображение для носка"></div>
+              <div id="pattern-layer" class="layer"><img src="{{pattern}}" alt="Узор для носка"></div>
+              <div id="upper-layer" class="layer"><img src="/img/socks_upper_level.png" alt="Шаблон носка"></div>
+            </div>
+            <li class="entry-link" id="delet"><a href="" class="delete" id="{{design_id}}">Удалить</a></li>
+          </div>
+
           {{/each}}
-            {{!-- {{#each getFavorite}}
-                <div class="container" data-id={{this.id}} >
-                    <form name="edit" action="get" >
-                        <div>{{this.user_id}}</div>
-                        <div>{{this.design_id}}</div>
-                    </form>
-                </div>
-            {{/each}} --}}
+          {{!-- {{#each getFavorite}}
+          <div class="container" data-id={{this.id}}>
+            <form name="edit" action="get">
+              <div>{{this.user_id}}</div>
+              <div>{{this.design_id}}</div>
+            </form>
+          </div>
+          {{/each}} --}}
         </div>
-    </div>
-</form>
+      </div>
+    </form>
+  </div>
 </div>
 <script src="/js/deleteFavorite.js"></script>
