@@ -1,5 +1,6 @@
 const express = require('express');
 const sha256 = require('sha256');
+const { deepCheckUser } = require('../middleware/userCheck');
 
 const router = express.Router();
 
@@ -57,7 +58,8 @@ router.post('/signin', async (req, res) => {
     if (user.password === password) {
       req.session.userId = user.id;
       req.session.userEmail = user.email;
-      res.redirect('/users/profile');
+      req.session.userName = user.name;
+      res.redirect(`/users/profile/${user.id}`);
     } else {
       res.send('wrong password');
     }
@@ -66,7 +68,7 @@ router.post('/signin', async (req, res) => {
   }
 });
 
-router.get('/profile', async (req, res) => {
+router.get('/profile/:id', deepCheckUser, async (req, res) => {
   const me = await User.findByPk(req.session.userId);
   res.render('profile', { me });
 });

@@ -4,19 +4,19 @@ module.exports = {
       url: '/img/img_1.png',
       createdAt: new Date(),
       updatedAt: new Date(),
-     }, {
+    }, {
       url: '/img/img_2.png',
       createdAt: new Date(),
       updatedAt: new Date(),
-     },{
+    }, {
       url: '/img/img_3.png',
       createdAt: new Date(),
       updatedAt: new Date(),
-     }, {
+    }, {
       url: '/img/img_4.png',
       createdAt: new Date(),
       updatedAt: new Date(),
-     }, {
+    }, {
       url: '/img/img_5.png',
       createdAt: new Date(),
       updatedAt: new Date(),

@@ -1,8 +1,19 @@
 body {
   width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items:center;
+  justify-content: space-between;
+}
+
+.body-container{
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content:center;
 }
 
 p {
@@ -134,3 +145,172 @@ header {
   height: 40px;
   padding: 5px;
 }
+
+.yellow {
+  color: rgb(240, 240, 11);
+}
+
+.bold {
+  font-weight: bold;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  height: 9em;
+}
+
+.logo {
+  width: 10em;
+  height: 10em;
+  padding: 10px;
+  display: flex;
+  
+}
+
+.logo img {
+  width: 5em;
+  height: 6em;
+  margin: auto;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #7d2adb;
+}
+
+.reglogin {
+  margin-top: 1em; 
+}
+
+.reglogin ul {
+  display: flex;
+  color: #7d2adb;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.reglogin ul a {
+  color:#7d2adb;
+}
+
+.reglogin ul a:hover{
+  color:darkgoldenrod;
+}
+
+.account {
+  margin: 0 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+nav {
+  width: 100%;
+  background-color: #7d2adb;
+  height: 30px;
+}
+.nav-item {
+  list-style-type: none;
+  margin-right: 2em;
+}
+
+.nav-ul {
+  display: flex;
+  justify-content:flex-start;
+  color:#ffffff;
+  text-transform: uppercase;
+  
+}
+
+.nav-ul a {
+  color: #ffffff;
+  padding: 0;
+  margin: 5px;
+  font-weight: bold;
+}
+
+.nav-ul a:hover{
+  color:goldenrod;
+}
+
+.right {
+  margin-left: auto;
+  
+}
+
+footer {
+  width: 100%;
+  background-color:#7d2adb;
+  margin-top: auto;
+  display: flex;
+  justify-content: space-around;
+  align-content:center;
+  align-items:center;
+  font-size: small;
+  line-height: 1em;
+  color: #ffffff;
+}
+
+.store {
+  width: 30%;
+  margin: 0 5em;
+  padding: 20px;
+  text-transform:uppercase;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: larger;
+}
+
+.right-footer {
+  width: 70%;
+}
+
+.copyright {
+  margin-top: 20px;
+}
+
+.shopping-cart {
+  text-align: center;
+}
+
+.title h1 {
+  font-size: 3em;;
+}
+
+.mainframe {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  background-image: url('/img/backsocks.jpg');
+}
+
+.welcome-container{
+  height: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.welcome-text{
+  width: 50%;
+  height: auto;
+  border: 1px solid rgb(180, 180, 180);
+  background-color:hsla(0, 0%, 100%, 0.918);
+  font-size: large;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content:center;
+  align-items:center;
+  padding: 20px;
+}
+
+.welcome-text p{
+  text-align: center;
+}
+  
+
