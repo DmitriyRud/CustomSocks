@@ -54,7 +54,7 @@ router.post('/favorites', async (req, res) => {
     }
   });
   //console.log({colorId, imageUrl, patternUrl});
-  
+
   if (!await isDesignExists(colorId.id, imageUrl.id, patternUrl.id)) {
     const newDesign = await Design.create({
       color_id: colorId.id,
@@ -94,8 +94,57 @@ router.post('/cart', async (req, res) => {
       url: pattern
     }
   });
-  //console.log({colorId, imageUrl, patternUrl});
-  //const newDesign = await Design.create({color_id: colorId.id, image_id: imageUrl.id, pattern_id: patternUrl.id});
-  //const newFavorite = await Favorite.create({user_id: req.session.userId, design_id: newDesign.id});
-  res.sendStatus(202);
+  let found = await Design.findOne({
+    where: {
+      color_id: colorId.id,
+      image_id: imageUrl.id,
+      pattern_id: patternUrl.id,
+    }
+  });
+  if (!Boolean(found)) {
+    found = await Design.create({
+      color_id: colorId.id,
+      image_id: imageUrl.id,
+      pattern_id: patternUrl.id,
+      price: 10.25
+    });
+  }
+  let foundCart = await Cart.findOne({
+    where: {
+      user_id: res.locals.userId
+    }
+  });
+  if (!Boolean(foundCart)) {
+    foundCart = await Cart.create({
+      design_id: found.id,
+      count: 1,
+      user_id: res.locals.userId,
+      full_price: 10.25
+    });
+  } else {
+    let foundInCart = await Cart.findOne({
+      where: {
+        design_id: found.id
+      }
+    });
+    if (!Boolean(foundInCart)) {
+      foundInCart = await Cart.create({
+        design_id: found.id,
+        count: 1,
+        user_id: res.locals.userId,
+        full_price: 10.25
+      });
+    } else {
+      foundInCart.set({
+        count: foundInCart.count + 1,
+        full_price: foundInCart.full_price + 10.25,
+      });
+      await foundInCart.save();
+    }
+
+    //console.log({colorId, imageUrl, patternUrl});
+    //const newDesign = await Design.create({color_id: colorId.id, image_id: imageUrl.id, pattern_id: patternUrl.id});
+    //const newFavorite = await Favorite.create({user_id: req.session.userId, design_id: newDesign.id});
+    res.sendStatus(202);
+  };
 });
