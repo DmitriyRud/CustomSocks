@@ -5,7 +5,7 @@ const {
   Image,
   Pattern,
   Favorite,
-  Cart
+  Cart,
 } = require('../db/models');
 
 const router = express.Router();
@@ -27,8 +27,8 @@ async function isDesignExists(color_id, image_id, pattern_id, price = 10.25) {
       color_id,
       image_id,
       pattern_id,
-      price
-    }
+      price,
+    },
   });
   return Boolean(found);
 }
@@ -37,36 +37,36 @@ router.post('/favorites', async (req, res) => {
   const {
     color,
     image,
-    pattern
+    pattern,
   } = req.body;
-  //console.log({color, image, pattern });
+  // console.log({color, image, pattern });
   const colorId = await Color.findOne({
     where: {
-      color
-    }
+      color,
+    },
   });
   const imageUrl = await Image.findOne({
     where: {
-      url: image
-    }
+      url: image,
+    },
   });
   const patternUrl = await Pattern.findOne({
     where: {
-      url: pattern
-    }
+      url: pattern,
+    },
   });
-  //console.log({colorId, imageUrl, patternUrl});
+  // console.log({colorId, imageUrl, patternUrl});
 
   if (!await isDesignExists(colorId.id, imageUrl.id, patternUrl.id)) {
     const newDesign = await Design.create({
       color_id: colorId.id,
       image_id: imageUrl.id,
       pattern_id: patternUrl.id,
-      price: 10.25
+      price: 10.25,
     });
     const newFavorite = await Favorite.create({
       user_id: req.session.userId,
-      design_id: newDesign.id
+      design_id: newDesign.id,
     });
     res.sendStatus(202);
   } else {
@@ -78,63 +78,63 @@ router.post('/cart', async (req, res) => {
   const {
     color,
     image,
-    pattern
+    pattern,
   } = req.body;
-  //console.log({color, image, pattern });
+  // console.log({color, image, pattern });
   const colorId = await Color.findOne({
     where: {
-      color
-    }
+      color,
+    },
   });
   const imageUrl = await Image.findOne({
     where: {
-      url: image
-    }
+      url: image,
+    },
   });
   const patternUrl = await Pattern.findOne({
     where: {
-      url: pattern
-    }
+      url: pattern,
+    },
   });
   let found = await Design.findOne({
     where: {
       color_id: colorId.id,
       image_id: imageUrl.id,
       pattern_id: patternUrl.id,
-    }
+    },
   });
-  if (!Boolean(found)) {
+  if (!found) {
     found = await Design.create({
       color_id: colorId.id,
       image_id: imageUrl.id,
       pattern_id: patternUrl.id,
-      price: 10.25
+      price: 10.25,
     });
   }
   let foundCart = await Cart.findOne({
     where: {
-      user_id: res.locals.userId
-    }
+      user_id: res.locals.userId,
+    },
   });
-  if (!Boolean(foundCart)) {
+  if (!foundCart) {
     foundCart = await Cart.create({
       design_id: found.id,
       count: 1,
       user_id: res.locals.userId,
-      full_price: 10.25
+      full_price: 10.25,
     });
   } else {
     let foundInCart = await Cart.findOne({
       where: {
-        design_id: found.id
-      }
+        design_id: found.id,
+      },
     });
-    if (!Boolean(foundInCart)) {
+    if (!foundInCart) {
       foundInCart = await Cart.create({
         design_id: found.id,
         count: 1,
         user_id: res.locals.userId,
-        full_price: 10.25
+        full_price: 10.25,
       });
     } else {
       foundInCart.set({
@@ -144,9 +144,9 @@ router.post('/cart', async (req, res) => {
       await foundInCart.save();
     }
 
-    //console.log({colorId, imageUrl, patternUrl});
-    //const newDesign = await Design.create({color_id: colorId.id, image_id: imageUrl.id, pattern_id: patternUrl.id});
-    //const newFavorite = await Favorite.create({user_id: req.session.userId, design_id: newDesign.id});
+    // console.log({colorId, imageUrl, patternUrl});
+    // const newDesign = await Design.create({color_id: colorId.id, image_id: imageUrl.id, pattern_id: patternUrl.id});
+    // const newFavorite = await Favorite.create({user_id: req.session.userId, design_id: newDesign.id});
     res.sendStatus(202);
-  };
+  }
 });

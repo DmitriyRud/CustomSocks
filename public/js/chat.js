@@ -2,7 +2,7 @@ console.log('READY');
 
 const inp = document.getElementById('text');
 const btn = document.getElementById('btn');
-const messagesDiv = document.querySelector('.messages');
+const messagesDiv = document.querySelector('.messages2');
 
 const socket = new WebSocket('ws://localhost:3100');
 
