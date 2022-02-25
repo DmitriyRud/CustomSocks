@@ -81,13 +81,15 @@ favoritesButton.addEventListener('click', async (e) => {
 
   if (response.ok) {
     message.innerHTML = 'Дизайн добавлен в Избранное';
+  } else {
+    message.innerHTML = 'Дизайн уже есть в Вашем Избранном';
+  };
     setTimeout(() => {
       message.innerHTML = '';
     }, 2000);
-  };
 });
 
-cartButton.addEventListener('click', (e) => {
+cartButton.addEventListener('click', async (e) => {
   e.preventDefault();
   const resColor = colorSelector.value;
   const resImage = imgLayer.getAttribute('src');
