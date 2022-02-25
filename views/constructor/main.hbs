@@ -4,40 +4,37 @@
   </div>
   <div class="inputs">
 
-    <form id="input-form" action="/constructor/new" method="POST">
+    <form id="input-form" action="/constructor/cart" method="POST">
       <p>Цвет носков:</p>
       <div class="color">
-          <select name="colorpicker">
+        <select name="colorpicker" id="color-selector">
+          <option value="#FCA099">Нежно-розовый</option>
           <option value="#FFFFFF">Белый</option>
           <option value="#000000">Черный</option>
           <option value="#0000FF">Синий</option>
-          <option value="#FCA099">Нежно-розовый</option>
           <option value="#FFD700">Желтый</option>
           <option value="#008000">Зеленый</option>
 
         </select>
       </div>
-      <p>Изображение:</p>
-      <div class="image">
-        <div class="img-card"></div>
-        <div class="img-card"></div>
-        <div class="img-card"></div>
-        <div class="img-card"></div>
-        <div class="img-card"></div>
-      </div>
+      <div class="images-patterns">
+        <p>Изображение:</p>
+        <div class="image">
+          <div class="img-card"><img src="/img/img_1.png" alt="Картинка 1"></div>
+          <div class="img-card" style="border: 2px solid red;"><img style="background-color: #FCA099;" src="/img/img_2.png" alt="Картинка 2"></div>
+          <div class="img-card"><img src="/img/img_3.png" alt="Картинка 3"></div>
+          <div class="img-card"><img src="/img/img_4.png" alt="Картинка 4"></div>
+          <div class="img-card"><img src="/img/img_5.png" alt="Картинка 5"></div>
+        </div>
         <p>Узор:</p>
-      <div class="pattern">
-        
-        <select name="colorpicker">
-          <option value="#FFFFFF">Белый</option>
-          <option value="#000000">Черный</option>
-          <option value="#0000FF">Синий</option>
-          <option value="#FCA099">Нежно-розовый</option>
-          <option value="#FFD700">Желтый</option>
-          <option value="#008000">Зеленый</option>
-
-        </select></div>
-      <input type="submit" value="Выбрать">
+        <div class="pattern">
+          <div class="pattern-card"><img src="/img/pattern_1.png" alt="Узор 1"></div>
+          <div class="pattern-card"><img src="/img/pattern_2.png" alt="Узор 2"></div>
+          <div class="pattern-card" style="border: 2px solid red;"><img style="background-color: #FCA099;" src="/img/pattern_3.png" alt="Узор 3"></div>
+          <div class="pattern-card"><img src="/img/pattern_4.png" alt="Узор 4"></div>
+          <div class="pattern-card"><img src="/img/pattern_5.png" alt="Узор 5"></div>
+        </div>
+      </div>
 
     </form>
 
@@ -50,8 +47,12 @@
       <div id="upper-layer" class="layer"><img src="/img/socks_upper_level.png" alt="Шаблон носка"></div>
     </div>
   </div>
+
+  <div class="messages"><p></p></div>
+
   <div class="controls">
     <input id="favorites" type="button" value="Добавить в избранное">
     <input id="cart" type="button" value="Добавить в корзину">
   </div>
 </div>
+<script defer src="/js/constructor.js"></script>

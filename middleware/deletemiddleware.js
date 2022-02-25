@@ -2,11 +2,11 @@ const { Favorite } = require('../db/models');
 
 async function deletemiddleware(req, res, next) {
   const { userId } = req.session;
+  console.log(req.params.Id)
   const favorite = await Favorite.findByPk(req.params.id);
   if (userId === favorite.user_id) {
     next();
-    res.json({ message: 'Error' });
-  }
+  } else return res.json({ message: 'Error' });
 }
 
 module.exports = deletemiddleware;

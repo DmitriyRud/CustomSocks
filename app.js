@@ -10,7 +10,9 @@ const indexRouter = require('./router/indexRouter');
 const usersRouter = require('./router/usersRouter');
 const socksRouter = require('./router/socksRouter');
 const cartRouter = require('./router/cartRouter');
+
 const chatRouter = require('./router/chatRouter');
+
 
 const app = exspress();
 
@@ -45,6 +47,7 @@ app.use('/users', usersRouter);
 app.use('/socks', socksRouter);
 app.use('/product', cartRouter);
 app.use('/chat', chatRouter);
+
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {

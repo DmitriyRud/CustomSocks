@@ -2,6 +2,7 @@ module.exports = {
 
   async up(queryInterface, Sequelize) {
     await queryInterface.bulkInsert('Patterns', [{
+
       url: '/img/pattern_1.png',
       createdAt: new Date(),
       updatedAt: new Date(),
