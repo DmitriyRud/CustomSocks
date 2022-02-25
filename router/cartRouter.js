@@ -44,8 +44,13 @@ router.get('/box', async (req, res) => {
 });
 
 router.put('/box', async (req, res) => {
-  const { full_price } = req.body;
-  const count = await Cart.create(full_price);
-})
+  try {
+    const { count } = req.body;
+    await Cart.update({ count: count + 1 });
+  } catch (err) {
+    console.log(err);
+    res.status(500);
+  }
+});
 
 module.exports = router;
