@@ -66,31 +66,50 @@ favoritesButton.addEventListener('click', async (e) => {
   const resImage = imgLayer.getAttribute('src');
   const resPattern = patternLayer.getAttribute('src');
   //console.log({resColor, resImage, resPattern});
-  
-    const response = await fetch('/favorites', {
-      method: "POST",
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        color: resColor,
-        image: resImage,
-        pattern: resPattern,
-      })
-    });
 
-    if (response.ok) {
-      message.innerHTML = 'Дизайн добавлен в Избранное';
-      setTimeout(() => {
-        message.innerHTML = '';
-      }, 2000);
-    };
+  const response = await fetch('/favorites', {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      color: resColor,
+      image: resImage,
+      pattern: resPattern,
+    })
+  });
+
+  if (response.ok) {
+    message.innerHTML = 'Дизайн добавлен в Избранное';
+    setTimeout(() => {
+      message.innerHTML = '';
+    }, 2000);
+  };
 });
 
 cartButton.addEventListener('click', (e) => {
   e.preventDefault();
-  message.innerHTML = 'Товар добавлен в корзину';
-  setTimeout(() => {
-    message.innerHTML = '';
-  }, 2000);
+  const resColor = colorSelector.value;
+  const resImage = imgLayer.getAttribute('src');
+  const resPattern = patternLayer.getAttribute('src');
+  //console.log({resColor, resImage, resPattern});
+
+  const response = await fetch('/cart', {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      color: resColor,
+      image: resImage,
+      pattern: resPattern,
+    })
+  });
+
+  if (response.ok) {
+    message.innerHTML = 'Товар добавлен в корзину';
+    setTimeout(() => {
+      message.innerHTML = '';
+    }, 2000);
+  }
 });
