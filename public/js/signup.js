@@ -14,6 +14,6 @@ $form.addEventListener('submit', async (event) => {
     alert('Заполни все данные или такой аккаунт уже есть');
   } else if (res.status === 200) {
     alert('Успешно Зарегестрирован');
-    window.location = '/users/profile';
+    window.location = '/users/profile/:id';
   }
 });
