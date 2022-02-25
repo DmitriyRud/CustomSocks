@@ -1,8 +1,19 @@
 body {
   width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+}
+
+.body-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
 }
 
 p {
@@ -42,7 +53,7 @@ header {
   justify-content: center;
 }
 
-.screen{
+.screen {
   width: 302px;
   height: 302px;
   border: 1px solid black;
@@ -108,7 +119,7 @@ header {
   border: 2px solid black;
   position: relative;
   overflow: hidden;
-  background-color:#ffffff;
+  background-color: #ffffff;
 }
 
 .img-card img {
@@ -133,4 +144,244 @@ header {
   color: green;
   height: 40px;
   padding: 5px;
+}
+
+.yellow {
+  color: rgb(240, 240, 11);
+}
+
+.bold {
+  font-weight: bold;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  height: 9em;
+  margin-left: 2.5em;
+}
+
+.logo {
+  width: 10em;
+  height: 10em;
+  padding: 10px;
+  display: flex;
+
+}
+
+.logo img {
+  width: 5em;
+  height: 6em;
+  margin: auto;
+  margin-top: 1em;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #393185;
+}
+
+.reglogin {
+  margin-top: 1em;
+}
+
+.reglogin ul {
+  display: flex;
+  color: #393185;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.reglogin ul a {
+  color: #393185;
+}
+
+.reglogin ul a:hover {
+  color: darkgoldenrod;
+}
+
+.account {
+  margin: 0 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+nav {
+  width: 100%;
+  background-color: #393185;
+  height: 30px;
+}
+
+.nav-item {
+  list-style-type: none;
+  margin-right: 2em;
+}
+
+.nav-ul {
+  display: flex;
+  justify-content: flex-start;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-left: 2em;
+}
+
+.nav-ul a {
+  color: #ffffff;
+  padding: 0;
+  margin: 5px;
+  font-weight: bold;
+}
+
+.nav-ul a:hover {
+  color: goldenrod;
+}
+
+.right {
+  margin-left: auto;
+
+}
+
+footer {
+  width: 100%;
+  background-color: #393185;
+  margin-top: auto;
+  display: flex;
+  justify-content: space-around;
+  justify-items: flex-start;
+  align-content: center;
+  align-items: center;
+  font-size: small;
+  line-height: 1em;
+  color: #ffffff;
+}
+
+.store {
+  width: 30%;
+  margin: 0 8em 0 2em;
+  padding: 30px;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: larger;
+}
+
+.right-footer {
+  width: 70%;
+}
+
+.copyright {
+  margin-top: 20px;
+}
+
+.shopping-cart {
+  text-align: center;
+}
+
+.title {
+
+  margin-right: auto;
+}
+
+.title h1 {
+  font-size: 3em;
+  ;
+}
+
+.mainframe {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  background-image: url('/img/backsocks.jpg');
+}
+
+.welcome-container {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.welcome-text {
+  width: 60%;
+  height: 90%;
+  border: 1px solid rgb(180, 180, 180);
+  background-color: hsla(0, 0%, 100%, 0.918);
+  font-size: 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.welcome-text p {
+  text-align: center;
+}
+
+.login-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.login-window {
+  width: 60%;
+  height: 60%;
+  border: 2px solid grey;
+  margin: auto;
+  padding: 3em 5em;
+  background-color: rgba(218, 218, 218, 0.212);
+}
+
+.register-window {
+  width: 60%;
+  height: 80%;
+  border: 2px solid grey;
+  margin: auto;
+  padding: 3em 5em;
+  background-color: rgba(218, 218, 218, 0.212);
+}
+
+.favorite-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.favorite-window {
+  width: 95%;
+  height: 95%;
+  border: 1px solid grey;
+  margin: auto;
+  display: flex;
+  align-content:center;
+  align-items:center;
+}
+
+#favorite-form {
+  width: 100%;
+  height: 100%;
+}
+
+.Vraper {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapperWorker {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 10%;
 }

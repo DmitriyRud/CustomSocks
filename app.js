@@ -11,6 +11,9 @@ const usersRouter = require('./router/usersRouter');
 const socksRouter = require('./router/socksRouter');
 const cartRouter = require('./router/cartRouter');
 
+// const chatRouter = require('./router/chatRouter');
+
+
 const app = exspress();
 
 app.set('views', path.join(__dirname, 'views'));
@@ -27,7 +30,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
     cookie: { secure: false },
-    name: 'login',
+    userName: 'login',
     store: new FileStore(),
   }),
 );
@@ -35,6 +38,8 @@ app.use(
 // миддлвара для защиты ручек. Значение берется из сессии
 app.use((req, res, next) => {
   res.locals.userId = req.session?.userId;
+  res.locals.userName = req.session?.userName;
+  //console.log(res.locals.userName);
   next();
 });
 
@@ -42,8 +47,9 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/socks', socksRouter);
 app.use('/product', cartRouter);
+// app.use('/chat', chatRouter);
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => {
   console.log(`Сервер Работает на порту ${PORT}`);
 });

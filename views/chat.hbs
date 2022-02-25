@@ -1,0 +1,10 @@
+<div class="messages2" data-user_name="{{username}}">
+{{#each message}}
+    <div class="message">{{this.text}}</div>
+{{/each}}
+</div>
+
+<input type="text" name="text" id="text">
+<button id="btn">click</button>
+
+<script defer src="/js/chat.js"></script>

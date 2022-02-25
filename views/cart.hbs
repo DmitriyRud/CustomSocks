@@ -1,5 +1,6 @@
 <h2>Basket</h2>
-<div>
+<link rel="stylesheet" href="/css/cart.css">
+<div class="cart">
    {{#each result}}
       <div class="screen">
         <div id="color-layer" class="layer" style="background-color:{{color}}"></div>
@@ -9,10 +10,18 @@
       </div>
     {{/each}}
 </div>
-<div>
+<div class="cart1">
     {{#each cart}}
-        <p>{{this.count}}</p>
+        <div class="wrap">
+            <p class="counter">{{this.count}}</p>
+            <div>
+                <button class="decrement">-</button>
+                <button class="increment">+</button>
+            </div>
+        </div>
         <p>{{this.full_price}}</p>
     {{/each}}
-    <h3>Итого: {{sum}}</h3>
 </div>
+<h2>колличество: {{sumItem}}</h2>
+<h3>Итого: {{sum}}</h3>
+<script src="/js/counter.js"></script>

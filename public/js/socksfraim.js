@@ -1,6 +1,6 @@
 const btn = document.querySelector('#btn-share');
 const divBtn = document.querySelector('div[name=btnShare]');
- 
+
 btn.addEventListener('click', (e) => {
   e.preventDefault();
   console.log(e.target);

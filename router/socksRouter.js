@@ -27,7 +27,7 @@ router.get('/favorite', async (req, res) => {
   res.render('favorite', { getFavorite, result });
 });
 
-router.delete('/delete/:id', deletemiddleware, async (req, res) => {
+router.delete('/delete/:id', async (req, res) => {
   try {
      await Favorite.destroy({ where: { id: req.params.id } });
     res.sendStatus(200);
