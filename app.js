@@ -11,7 +11,7 @@ const usersRouter = require('./router/usersRouter');
 const socksRouter = require('./router/socksRouter');
 const cartRouter = require('./router/cartRouter');
 
-const chatRouter = require('./router/chatRouter');
+// const chatRouter = require('./router/chatRouter');
 
 
 const app = exspress();
@@ -47,9 +47,9 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/socks', socksRouter);
 app.use('/product', cartRouter);
-app.use('/chat', chatRouter);
+// app.use('/chat', chatRouter);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => {
   console.log(`Сервер Работает на порту ${PORT}`);
 });

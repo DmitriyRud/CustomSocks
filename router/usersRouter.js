@@ -20,7 +20,8 @@ router.post('/signup', async (req, res) => {
       if (match) {
         return `(${match[1]}) ${match[2]}-${match[3]}`;
       }
-      res.send('Пожалуйста, введите номер в указанном формате. Спасибо!');
+      return tel
+      // res.send('Пожалуйста, введите номер в указанном формате. Спасибо!');
     }
     const redTel = formatPhoneNumber(phone);
     if (userOne) {
@@ -77,6 +78,29 @@ router.get('/logout', async (req, res) => {
   req.session.destroy();
   res.clearCookie('login');
   res.redirect('/');
+});
+
+router.post('/profile', async (req, res) => {
+  const { name, password: pass, email, phone } = req.body;
+  const id = req.session.userId;
+  console.log(name, id);
+  if (name) {
+    const response = await User.update({ name }, { where: { id } });
+    return res.json(response);
+  }
+  if (email) {
+    const response = await User.update({ email }, { where: { id } });
+    return res.json(response);
+  }
+  if (pass) {
+    const password = sha256(pass);
+    const response = await User.update({ password }, { where: { id } });
+    return res.json(response);
+  }
+  if (phone) {
+    const response = await User.update({ phone }, { where: { id } });
+    return res.json(response);
+  }
 });
 
 module.exports = router;

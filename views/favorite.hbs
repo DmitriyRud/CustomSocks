@@ -3,7 +3,9 @@
     <form id="favorite-form">
       <div id="Vraper">
         <div class="wrapperWorker" data-id="{{userId}}">
+          
           {{#each result}}
+
           <div name="frame">
             <div class="screen">
               <div id="color-layer" class="layer" style="background-color:{{color}}"></div>
@@ -13,6 +15,7 @@
             </div>
             <li class="entry-link" id="delet"><a href="" class="delete" id="{{design_id}}">Удалить</a></li>
           </div>
+
           {{/each}}
           {{!-- {{#each getFavorite}}
           <div class="container" data-id={{this.id}}>
