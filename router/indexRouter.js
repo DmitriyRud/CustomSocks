@@ -12,12 +12,19 @@ router.get('/constructor', (req, res)=>{
 })
 module.exports = router;
 
+<<<<<<< HEAD
 function isDesignExists(color_id, image_id, pattern_id, price = 10.25)
 
 router.post('/favorites', async (req, res)=> {
   const {color, image, pattern } = req.body;
   //console.log({color, image, pattern });
   const colorId = await Color.findOne({where: {color}});
+=======
+router.post('/favorites', async (req, res) => {
+  const {color, image, pattern } = req.body;
+  console.log({color, image, pattern });
+  const colorId = await Color.findOne({ where: { color } });
+>>>>>>> master
   const imageUrl = await Image.findOne({where: {url: image}});
   const patternUrl = await Pattern.findOne({where:{url: pattern}});
   //console.log({colorId, imageUrl, patternUrl});

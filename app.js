@@ -9,6 +9,7 @@ const FileStore = require('session-file-store')(session);
 const indexRouter = require('./router/indexRouter');
 const usersRouter = require('./router/usersRouter');
 const socksRouter = require('./router/socksRouter');
+const cartRouter = require('./router/cartRouter');
 
 const app = exspress();
 
@@ -40,6 +41,7 @@ app.use((req, res, next) => {
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/socks', socksRouter);
+app.use('/product', cartRouter);
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {

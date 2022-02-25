@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = {
   async up (queryInterface, Sequelize) {
      await queryInterface.bulkInsert('Patterns', [{
@@ -22,12 +20,10 @@ module.exports = {
       url: '/img/pattern_5.png',
       createdAt: new Date(),
       updatedAt: new Date(),
-     }], {});
+    }], {});
   },
 
-  async down (queryInterface, Sequelize) {
-
-     await queryInterface.bulkDelete('Patterns', null, {});
-
-  }
+  async down(queryInterface, Sequelize) {
+    await queryInterface.bulkDelete('Patterns', null, {});
+  },
 };

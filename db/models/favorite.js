@@ -1,7 +1,7 @@
-'use strict';
 const {
-  Model
+  Model,
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Favorite extends Model {
     /**
@@ -10,13 +10,13 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate({ User, Design }) {
-     this.belongsTo(User, {foreignKey: 'user_id'});
-     this.belongsTo(Design, {foreignKey: 'design_id'});
+      this.belongsTo(User, { foreignKey: 'user_id' });
+      this.belongsTo(Design, { foreignKey: 'design_id' });
     }
   }
   Favorite.init({
     user_id: DataTypes.INTEGER,
-    design_id: DataTypes.INTEGER
+    design_id: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Favorite',

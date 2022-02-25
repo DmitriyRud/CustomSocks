@@ -1,9 +1,19 @@
 
 <div class="socksCard">
-  <span>Design #{{design.id}}</span>
+  <span>Design #{{favorite.id}}</span>
 {{!-- картинка методом конструктора --}}
-<div>
-  тут должна быть картинка носка
+<div name="socksImage">
+  <div class="screen">
+      <div id="color-layer" class="layer" style="background-color:{{color}}"></div>
+      <div id="img-layer" class="layer"><img src="{{image}}" alt="Изображение для носка"></div>
+      <div id="pattern-layer" class="layer"><img src="{{pattern}}" alt="Узор для носка"></div>
+      <div id="upper-layer" class="layer"><img src="/img/socks_upper_level.png" alt="Шаблон носка"></div>
+    </div>
 </div>
-<a href=""><button type="button" class="btn btn-primary">Поделиться</button></a>
+<div name="btnShare">
+  <a href="">
+    <button id="btn-share" type="button" class="btn btn-primary">Поделиться</button>
+  </a>
 </div>
+</div>
+<script src="/js/socksfraim.js"></script>
